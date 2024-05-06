@@ -21,18 +21,15 @@ def find_food_type_by_name():
     print(food_type) if food_type else print(
         f'Food type {name} not found')
 
-
-def create_department():
+def input_food_type():
     new = input("Enter a new food type: ")
-    location = input("Enter the department's location: ")
+    description = input("Enter the food type's description: ")
     try:
-        department = Department.create(name, location)
-        print(f'Success: {department}')
+        new_food_type = Food_type.create(new, description)
+        print(f'Success: {new_food_type}')
     except Exception as exc:
-        print("Error creating department: ", exc)
+        print("Error inputting new food type: ", exc)
 
-    
-    input_food_type,
     update_food_type,
     delete_food_type,
     list_restaurants,
