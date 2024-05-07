@@ -1,4 +1,4 @@
-# lib/models/food_type.py
+
 from models.__init__ import CURSOR, CONN
 
 class Food_type:
@@ -32,7 +32,7 @@ class Food_type:
 
     @description.setter
     def description(self, description):
-        if isinstance(description, str) and len(description) < 10:
+        if isinstance(description, str) and len(description):
             self._description = description
         else:
             raise ValueError(
@@ -157,7 +157,7 @@ class Food_type:
         row = CURSOR.execute(sql, (name,)).fetchone()
         return cls.instance_from_db(row) if row else None
 
-    def employees(self):
+    def restaurants(self):
         """Return list of restaurants associated with current food type"""
         from models.restaurant import Restaurant
         sql = """

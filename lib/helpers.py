@@ -2,7 +2,7 @@ from models.food_type import Food_type
 from models.restaurant import Restaurant
 
 def exit_program():
-    print("Goodbye!")
+    print("Thank you visiting the Denver Restaurant Guide")
     exit()
 
 def list_food_types():
